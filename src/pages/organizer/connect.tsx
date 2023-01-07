@@ -5,24 +5,51 @@ import { useRouter } from "next/router"
 import React from "react"
 import toast from "react-hot-toast"
 import Swal from "sweetalert2"
+import { useWeb3React } from "@web3-react/core"
 
 import WalletLogo from "../../assets/image/wallets"
 import Button from "../../components/button/Button"
 import AppLayout from "../../components/layout/AppLayout"
+import { injectedProvider } from "../../utils/metamask.connect"
 
 const Connect = () => {
-  const route = useRouter()
+  const { account, activate, active, chainId, connector, deactivate, error, setError, library } =
+    useWeb3React()
+
+  const router = useRouter()
+
   const [email, setEmail] = React.useState("")
   const [defaultAccount, setDefaultAccount] = React.useState("")
   const [userBalance, setUserBalance] = React.useState("")
 
-  const connect = () => {
-    Swal.fire({
-      title: "Success Connecting",
-      icon: "success",
-    })
+  const connect = async () => {
+    try {
+      if (!connector) {
+        try {
+          await activate(injectedProvider)
+          Swal.fire({
+            title: "Success Connecting",
+            icon: "success",
+          })
+        } catch (e: any) {
+          throw new Error(e)
+        }
+      } else {
+        toast("Already connected", { duration: 1500 })
+      }
 
-    window.localStorage.setItem("Authorization", "uuID")
+      setTimeout(() => {
+        router.push("/organizer/host-event")
+      }, 300)
+    } catch (e) {
+      let message = "An unknown Error occured"
+      if (error instanceof Error) message = error.message
+
+      Swal.fire({
+        title: message,
+        icon: "error",
+      })
+    }
   }
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
@@ -123,7 +150,8 @@ const Connect = () => {
                 content=""
                 type="button"
                 className="border border-primary bg-white w-full text-black flex items-center rounded-3xl md:flex-row flex-col p-5"
-                onClick={initializeMetamask}
+                // onClick={initializeMetamask}
+                onClick={connect}
               >
                 <div className="mb-6 d:mb-0">
                   <img src={WalletLogo.MetaMask.src} className="w-[50px]" />

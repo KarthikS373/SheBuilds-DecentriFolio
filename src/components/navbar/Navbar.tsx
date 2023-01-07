@@ -1,3 +1,4 @@
+import { useWeb3React } from "@web3-react/core"
 import { deleteCookie } from "cookies-next"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -12,13 +13,33 @@ import Props from "./Navbar.types"
 import eventSVG from "../../assets/svg/cultural.svg"
 
 const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
+  const { connector } = useWeb3React()
   const [isVisible, setIsVisible] = React.useState(false)
+  const [isAuth, setIsAuth] = React.useState(false)
+  const [address, setAddress] = React.useState<string | null>(null)
   const route = useRouter()
 
+  React.useEffect(() => {
+    setIsAuth(isAuthenticated)
+  }, [isAuthenticated])
+
+  React.useEffect(() => {
+    ;(async () => {
+      if (connector) {
+        const account = await connector.getAccount()
+        if (account) {
+          setAddress(account)
+        }
+      }
+    })()
+  }, [connector])
+
   const handleLogout = () => {
+    if (connector) connector.deactivate()
     localStorage.removeItem("Authorization")
     deleteCookie("auth")
     route.push("/organizer/connect")
+    setIsAuth(false)
   }
 
   return (
@@ -72,7 +93,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
             </ul>
           </div>
         </div>
-        {isAuthenticated ? (
+        {isAuth ? (
           <Button
             content="Logout"
             className="p-3 bg-white text-black rounded-xl"
@@ -81,12 +102,18 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
             Logout
           </Button>
         ) : (
-          !isAuthenticated && (
+          !isAuth && (
             <div className="flex items-center">
               <Link href="/organizer/connect">
                 <div className="mr-10 flex items-center cursor-pointer hover:brightness-90 transition duration-300">
-                  <img src={eventSVG.src} width={30} />
-                  <p className="ml-2 font-semibold text-white ">Create Event</p>
+                  {address ? (
+                    <p className="ml-2 font-semibold text-white ">{address}</p>
+                  ) : (
+                    <>
+                      <img src={eventSVG.src} width={30} />
+                      <p className="ml-2 font-semibold text-white ">Create Event</p>
+                    </>
+                  )}
                 </div>
               </Link>
             </div>
@@ -160,7 +187,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
               />
             )}
           </ul>
-          {isAuthenticated ? (
+          {isAuth ? (
             <Button content="" className="text-primary rounded-lg font-bold font-montserrat">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -12,7 +12,7 @@ const MakeEvent = () => {
   const [stakeholderCount, setStakeholderCount] = React.useState(0)
   const [stakeholderArr, setStakeholderArr] = React.useState<SetStateAction<any>>([])
   const [ticketDesign, setTicketDesign] = React.useState<SetStateAction<any>>()
-  const [concertMap, setConcertMap] = React.useState<SetStateAction<any>>()
+  const [cover, setCover] = React.useState<SetStateAction<any>>()
 
   // event datas
   const [eventName, setEventName] = React.useState<SetStateAction<String>>("")
@@ -103,10 +103,10 @@ const MakeEvent = () => {
                   </div>
                 </div>
                 <div className="ticket-design w-[45%] mb-5">
-                  <p className="capitalize text-xl mb-2">Location</p>
+                  <p className="capitalize text-xl mb-2">Cover Image</p>
                   <div
                     className="bg-cover bg-center bg-gray-400 text-white h-[200px] rounded-2xl relative"
-                    style={{ backgroundImage: `url('${concertMap}')` }}
+                    style={{ backgroundImage: `url('${cover}')` }}
                   >
                     <Input
                       onChange={(e) => {
@@ -114,7 +114,7 @@ const MakeEvent = () => {
                           let objectURL = null
                           if (e.target.files.length > 0)
                             objectURL = URL.createObjectURL(e.target.files[0])
-                          setConcertMap(objectURL)
+                          setCover(objectURL)
                         }
                       }}
                       type="file"
@@ -178,8 +178,8 @@ const MakeEvent = () => {
                     className="border-b"
                     required
                   />
-                  <Input type="text" placeholder="Section" className="border-b" required />
-                  <Input type="text" placeholder="Notes" className="border-b" required />
+                  <Input type="text" placeholder="Section" className="border-b" />
+                  <Input type="text" placeholder="Notes" className="border-b" />
                 </div>
                 <div className="border rounded-lg p-3 m-2">
                   <h4 className="text-center font-light ">VIP</h4>
@@ -189,8 +189,8 @@ const MakeEvent = () => {
                     className="border-b"
                     required
                   />
-                  <Input type="text" placeholder="Section" className="border-b" required />
-                  <Input type="text" placeholder="Notes" className="border-b" required />
+                  <Input type="text" placeholder="Section" className="border-b" />
+                  <Input type="text" placeholder="Notes" className="border-b" />
                 </div>
                 <div className="border rounded-lg p-3 m-2">
                   <h4 className="text-center font-light ">Normal</h4>
@@ -200,8 +200,8 @@ const MakeEvent = () => {
                     className="border-b"
                     required
                   />
-                  <Input type="text" placeholder="Section" className="border-b" required />
-                  <Input type="text" placeholder="Notes" className="border-b" required />
+                  <Input type="text" placeholder="Section" className="border-b" />
+                  <Input type="text" placeholder="Notes" className="border-b" />
                 </div>
               </div>
             </div>
