@@ -1,4 +1,3 @@
-import { base64Encode } from "@firebase/util"
 import axios from "axios"
 import { useQRCode } from "next-qrcode"
 import React, { SetStateAction } from "react"
