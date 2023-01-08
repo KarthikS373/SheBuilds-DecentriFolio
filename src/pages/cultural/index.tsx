@@ -2,7 +2,7 @@ import Head from "next/head"
 
 import UnderConstruction from "../../components/under-construction/UnderConstruction"
 
-const Sports = () => {
+const Project = () => {
   return (
     <div>
       <Head>
@@ -13,4 +13,4 @@ const Sports = () => {
   )
 }
 
-export default Sports
+export default Project
