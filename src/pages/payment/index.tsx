@@ -29,9 +29,9 @@ const PaymentMethod = () => {
         <div
           className={`${
             t.visible ? "animate-enter" : "animate-leave"
-          } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+          } pointer-events-auto flex w-full max-w-md rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5`}
         >
-          <div className="flex-1 w-0 p-4">
+          <div className="w-0 flex-1 p-4">
             <div className="flex items-start">
               <div className="flex-shrink-0 pt-0.5">
                 <img className="h-12 w-12 rounded-full" src={WalletLogo.MetaMask.src} alt="" />
@@ -47,7 +47,7 @@ const PaymentMethod = () => {
           <div className="flex border-l border-gray-200">
             <button
               onClick={() => toast.dismiss(t.id)}
-              className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="flex w-full items-center justify-center rounded-none rounded-r-lg border border-transparent p-4 text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               Dismiss
             </button>
@@ -77,10 +77,10 @@ const PaymentMethod = () => {
     <Button
       content=""
       type="button"
-      className="border border-primary bg-white w-full text-black flex items-center rounded-3xl md:flex-row flex-col p-5"
+      className="flex w-full flex-col items-center rounded-3xl border border-primary bg-white p-5 text-black md:flex-row"
       onClick={wallet.toLowerCase() === "metamask" ? initializeMetamask : undefined}
     >
-      <div className="mb-6 d:mb-0">
+      <div className="d:mb-0 mb-6">
         <img src={img.src} className="w-[50px]" />
       </div>
       <p className="-mt-[5px] font-semibold md:ml-5">Connect {wallet} wallet</p>
@@ -89,11 +89,11 @@ const PaymentMethod = () => {
 
   return (
     <AppLayout>
-      <div className="jumbotron py-16 bg-primary text-white p-5 flex items-center flex-col min-h-screen">
-        <form className="bg-white rounded-xl py-5 px-20 mt-20">
-          <h1 className="underline font-semibold font-poppins text-black text-center"></h1>
-          <div className="crypto-method flex flex-col gap-5 items-center my-5">
-            <h2 className="text-black mb-2">Choose a wallet</h2>
+      <div className=" flex min-h-screen flex-col items-center bg-primary p-5 py-16 text-white">
+        <form className="mt-20 rounded-xl bg-white py-5 px-20">
+          <h1 className="text-center font-poppins font-semibold text-black underline"></h1>
+          <div className="crypto-method my-5 flex flex-col items-center gap-5">
+            <h2 className="mb-2 text-black">Choose a wallet</h2>
             {renderPayment("Metamask", WalletLogo.MetaMask)}
             {renderPayment("CoinBase", WalletLogo.CoinBase)}
             {renderPayment("Ledger", WalletLogo.Ledger)}

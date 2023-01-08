@@ -17,7 +17,7 @@ const OrganizerLayout = ({ children, isSidebarOpen, setIsSidebarOpen }: Props) =
   return (
     <div>
       <Navbar isAuthenticated={isAuthenticated} />
-      <div className="flex justify-between relative min-h-screen lg:ml-[400px]">
+      <div className="relative flex min-h-screen justify-between">
         <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
         {children}
       </div>

@@ -34,9 +34,9 @@ const DefaultCard = ({
           </div>
         )}
         <span className="line-clamp-3 mt-2 text-2xl font-bold">{title}</span>
-        <hr className="border-t-1 my-3 w-12 border-t-customYellow-100" />
+        <hr className="border-t-1 border-t-customYellow-100 my-3 w-12" />
         <span className="line-clamp-4 mb-4 text-base text-gray-700">{body}</span>
-        <Link href={slug} className="cursor-pointer text-sm text-customYellow-100 underline">
+        <Link href={slug} className="text-customYellow-100 cursor-pointer text-sm underline">
           {bottomChild || <span>Read more</span>}
         </Link>
       </div>
@@ -47,7 +47,7 @@ const DefaultCard = ({
     return (
       <div
         className={
-          "min-w-lg grid grid-cols-1 overflow-hidden rounded-3xl bg-white text-left shadow-xl hover:border-[1px] hover:border-solid hover:border-customYellow-100 " +
+          "min-w-lg hover:border-customYellow-100 grid grid-cols-1 overflow-hidden rounded-3xl bg-white text-left shadow-xl hover:border-[1px] hover:border-solid " +
           className
         }
       >
@@ -67,7 +67,7 @@ const DefaultCard = ({
   return (
     <div
       className={
-        "min-w-lg m-10 grid grid-cols-1 overflow-hidden rounded-3xl bg-white text-left shadow-xl hover:border-[1px] hover:border-solid hover:border-customYellow-100 md:grid-cols-2 " +
+        "min-w-lg hover:border-customYellow-100 m-10 grid grid-cols-1 overflow-hidden rounded-3xl bg-white text-left shadow-xl hover:border-[1px] hover:border-solid md:grid-cols-2 " +
         className
       }
     >

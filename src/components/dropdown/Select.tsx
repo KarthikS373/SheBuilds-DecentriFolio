@@ -2,7 +2,7 @@ import React from "react"
 
 const Select = ({ items }: Props) => {
   return (
-    <select className="transition duration-300 outline-none focus:ring-2 ring-[#19083D] p-3 rounded-2xl text-sm text-slate-500 w-full">
+    <select className="w-full rounded-2xl p-3 text-sm text-slate-500 outline-none ring-[#19083D] transition duration-300 focus:ring-2">
       {items?.map((item, index) => (
         <option key={index} value={item.value || item.number.split(" ").join("-")}>
           {item.number}

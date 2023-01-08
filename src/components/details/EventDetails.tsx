@@ -4,7 +4,7 @@ const EventDetails = () => {
   return (
     <>
       <div className="bg-gray-100">
-        <div className="pb-20 pt-12 px-6 lg:px-32">
+        <div className="px-6 pb-20 pt-12 lg:px-32">
           <div>
             <img
               className="h-full w-full object-contain"

@@ -9,15 +9,15 @@ const FAQ = ({ isClicked, setIsClicked }: Props) => {
     <div
       className={`${
         isClicked ? "block" : "hidden"
-      } w-full z-50  fixed top-0 h-screen flex items-center justify-center cursor-pointer`}
+      } fixed top-0  z-50 flex h-screen w-full cursor-pointer items-center justify-center`}
       style={{ backgroundColor: "rgba(50, 50, 93, 0.55" }}
     >
-      <div className="rounded-3xl bg-white p-8 md:w-[70%] w-[90%] max-h-[95vh] overflow-y-auto relative">
+      <div className="relative max-h-[95vh] w-[90%] overflow-y-auto rounded-3xl bg-white p-8 md:w-[70%]">
         <div className="absolute right-10">
           <Button
             onClick={() => setIsClicked(!isClicked)}
             content=""
-            className="bg-slate-100 p-3 rounded-xl"
+            className="rounded-xl bg-slate-100 p-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -25,15 +25,15 @@ const FAQ = ({ isClicked, setIsClicked }: Props) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </Button>
         </div>
-        <p className="uppercase font-bold text-3xl text-center mb-10">faq</p>
+        <p className="mb-10 text-center text-3xl font-bold uppercase">faq</p>
         <div className="">
-          <p className="font-semibold text-xl font-poppins mb-3">
+          <p className="mb-3 font-poppins text-xl font-semibold">
             How to create a metamask wallet account?
           </p>
           <p className="mb-4">
@@ -46,7 +46,7 @@ const FAQ = ({ isClicked, setIsClicked }: Props) => {
             veritatis officiis!
           </p>
           <iframe
-            className="rounded-lg shadow lg:w-[560px] w-full"
+            className="w-full rounded-lg shadow lg:w-[560px]"
             height="315"
             src="https://www.youtube.com/@metamask"
             title="YouTube video player"

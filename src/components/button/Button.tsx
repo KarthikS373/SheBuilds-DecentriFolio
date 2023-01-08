@@ -15,7 +15,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={` ${className} hover:brightness-90 flex items-center transition`}
+      className={` ${className} flex items-center transition hover:brightness-90`}
       onClick={onClick}
       disabled={disabled}
     >

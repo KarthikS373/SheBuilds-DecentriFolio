@@ -2,14 +2,14 @@ import twitterSVG from "../../assets/svg/twitter.svg"
 
 const Footer = () => {
   return (
-    <footer className="bg-[#142850] py-12 px-5 flex md:flex-row flex-col justify-between md:items-end text-white relative z-30">
+    <footer className="relative z-30 flex flex-col justify-between bg-[#142850] py-12 px-5 text-white md:flex-row md:items-end">
       <div>
-        <img src="/images/logo.png" alt="logo" className="w-[135px] mb-2" />
+        <img src="/images/logo.png" alt="logo" className="mb-2 w-[135px]" />
         <p>Created by Team 404</p>
       </div>
 
-      <div className="flex flex-col items-start md:mt-0 mt-20">
-        <div className="flex items-center mb-5">
+      <div className="mt-20 flex flex-col items-start md:mt-0">
+        <div className="mb-5 flex items-center">
           <div className="mx-3 cursor-pointer">
             <img
               src={twitterSVG.src}

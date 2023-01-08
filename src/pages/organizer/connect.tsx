@@ -75,9 +75,9 @@ const Connect = () => {
         <div
           className={`${
             t.visible ? "animate-enter" : "animate-leave"
-          } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+          } pointer-events-auto flex w-full max-w-md rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5`}
         >
-          <div className="flex-1 w-0 p-4">
+          <div className="w-0 flex-1 p-4">
             <div className="flex items-start">
               <div className="flex-shrink-0 pt-0.5">
                 <img className="h-12 w-12 rounded-full" src={WalletLogo.MetaMask.src} alt="" />
@@ -93,7 +93,7 @@ const Connect = () => {
           <div className="flex border-l border-gray-200">
             <button
               onClick={() => toast.dismiss(t.id)}
-              className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="flex w-full items-center justify-center rounded-none rounded-r-lg border border-transparent p-4 text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               Dismiss
             </button>
@@ -124,15 +124,15 @@ const Connect = () => {
       <Head>
         <title>DecentriFolio - connect</title>
       </Head>
-      <div className="bg-[#19083D] pt-40 px-20 min-h-screen flex justify-between items-center lg:flex-row flex-col">
-        <h1 className="text-white font-bold text-5xl lg:w-1/2 w-full lg:mb-0 mb-10">
+      <div className="flex min-h-screen flex-col items-center justify-between bg-[#19083D] px-20 pt-40 lg:flex-row">
+        <h1 className="mb-10 w-full text-5xl font-bold text-white lg:mb-0 lg:w-1/2">
           Host your events
         </h1>
         <form
           onSubmit={handleSubmit}
-          className="lg:w-1/2 w-[80%] min-w-[300px] p-10 rounded-xl bg-white lg:mb-0 mb-10"
+          className="mb-10 w-[80%] min-w-[300px] rounded-xl bg-white p-10 lg:mb-0 lg:w-1/2"
         >
-          <h2 className="underline font-bold text-3xl mb-5">Connect</h2>
+          <h2 className="mb-5 text-3xl font-bold underline">Connect</h2>
           <div className="flex flex-col items-center">
             {/* <div className="my-5 w-full">
               <Input
@@ -149,11 +149,11 @@ const Connect = () => {
               <Button
                 content=""
                 type="button"
-                className="border border-primary bg-white w-full text-black flex items-center rounded-3xl md:flex-row flex-col p-5"
+                className="flex w-full flex-col items-center rounded-3xl border border-primary bg-white p-5 text-black md:flex-row"
                 // onClick={initializeMetamask}
                 onClick={connect}
               >
-                <div className="mb-6 d:mb-0">
+                <div className="d:mb-0 mb-6">
                   <img src={WalletLogo.MetaMask.src} className="w-[50px]" />
                 </div>
                 <p className="-mt-[5px] font-semibold md:ml-5">Connect to MetaMask</p>
@@ -164,7 +164,7 @@ const Connect = () => {
             <hr />
             <p>
               Don't have a metamask wallet?{" "}
-              <span className="text-[#19083D] font-bold">
+              <span className="font-bold text-[#19083D]">
                 <Link href="">Create wallet</Link>
               </span>
             </p>

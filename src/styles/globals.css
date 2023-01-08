@@ -56,27 +56,27 @@ body {
 
 @layer base {
   h1 {
-    @apply font-medium leading-tight text-5xl mt-0;
+    @apply mt-0 text-5xl font-medium leading-tight;
   }
 
   h2 {
-    @apply font-medium leading-tight text-4xl mt-0;
+    @apply mt-0 text-4xl font-medium leading-tight;
   }
 
   h3 {
-    @apply font-medium leading-tight text-3xl mt-0;
+    @apply mt-0 text-3xl font-medium leading-tight;
   }
 
   h4 {
-    @apply font-medium leading-tight text-2xl mt-0;
+    @apply mt-0 text-2xl font-medium leading-tight;
   }
 
   h5 {
-    @apply font-medium leading-tight text-xl mt-0;
+    @apply mt-0 text-xl font-medium leading-tight;
   }
 
   h6 {
-    @apply font-medium leading-tight text-base mt-0;
+    @apply mt-0 text-base font-medium leading-tight;
   }
 }
 

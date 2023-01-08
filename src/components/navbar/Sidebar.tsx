@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Button from "../button/Button"
 
 import Props from "./Sidebar.types"
@@ -25,67 +25,68 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
   return (
     <>
       <div
-        className={`bg-primary min-h-screen fixed left-0 top-0 bottom-0 lg:w-[25%] px-3 lg:z-10 z-40 lg:translate-x-0 ${
-          isSidebarOpen ? "translate-x-0 w-full" : "-translate-x-[1000px]"
-        } transition`}
-      >
-        <Button
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          content=""
-          className="bg-white text-primary mt-32 lg:hidden p-3 rounded-xl mb-5"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-          </svg>
-        </Button>
-        <ul className="lg:pt-32">
-          {sidebarData.map((item, index) => {
-            return (
-              <a href={item.href} key={index}>
-                <Button
-                  key={index}
-                  content=""
-                  className="flex justify-between cursor-pointer border-b-2 w-full"
-                  endIcon={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6 text-white"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                      />
-                    </svg>
-                  }
-                >
-                  <li key={index} className="text-lg text-white my-4 relative flex items-center">
-                    <img src={item.icon} className="bg-white rounded-lg" />
-                    <p className="ml-5">{item.name}</p>
-                  </li>
-                </Button>
-              </a>
-            )
-          })}
-        </ul>
-      </div>
-      <div
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className={`lg:hidden ${
           isSidebarOpen ? "absolute" : "hidden"
         } top-0 bottom-0 left-0 right-0 bg-white`}
-      ></div>
+      >
+        <div
+          className={`fixed left-0 top-0 bottom-0 z-40 min-h-screen bg-primary px-3 lg:z-10 lg:w-[25%] lg:translate-x-0 ${
+            isSidebarOpen ? "w-full translate-x-0" : "-translate-x-[1000px]"
+          } transition`}
+        >
+          <Button
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            content=""
+            className="mt-32 mb-5 rounded-xl bg-white p-3 text-primary lg:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </Button>
+          <ul className="lg:pt-32">
+            {sidebarData.map((item, index) => {
+              return (
+                <a href={item.href} key={index}>
+                  <Button
+                    key={index}
+                    content=""
+                    className="flex w-full cursor-pointer justify-between border-b-2"
+                    endIcon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="h-6 w-6 text-white"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                        />
+                      </svg>
+                    }
+                  >
+                    <li key={index} className="relative my-4 flex items-center text-lg text-white">
+                      <img src={item.icon} className="rounded-lg bg-white" />
+                      <p className="ml-5">{item.name}</p>
+                    </li>
+                  </Button>
+                </a>
+              )
+            })}
+          </ul>
+        </div>
+      </div>
     </>
   )
 }
