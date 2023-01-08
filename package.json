@@ -19,7 +19,6 @@
     "lint": "eslint . --fix --ext ts --ext tsx --ext js",
     "typecheck": "tsc --noEmit",
     "lint-staged": "lint-staged",
-    "prepare": "husky install",
     "format": "prettier --write ."
   },
   "dependencies": {
