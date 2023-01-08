@@ -44,7 +44,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
 
   return (
     <>
-      <div className="lg:flex fixed top-0 w-full hidden items-center justify-between bg-[#142850] py-1 px-4 z-50">
+      <div className="fixed top-0 z-50 hidden w-full items-center justify-between bg-[#142850] py-1 px-4 lg:flex">
         <div className="flex items-center">
           <div className="text-white">
             <Link href="/" className="cursor-pointer">
@@ -62,13 +62,13 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
               ) : isSearchBar ? (
                 <Input
                   type="text"
-                  className="p-3 rounded-xl text-slate-700 w-[400px] pr-[100px] focus:ring-4 focus:ring-slate-400"
+                  className="w-[400px] rounded-xl p-3 pr-[100px] text-slate-700 focus:ring-4 focus:ring-slate-400"
                   placeholder="cari tiket yang anda inginkan"
                   endIcon={
                     <Button
                       type="submit"
                       content=""
-                      className="text-slate-500 w-[100%] bg-[#273568] rounded-lg p-2 px-3"
+                      className="w-[100%] rounded-lg bg-[#273568] p-2 px-3 text-slate-500"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-6 h-6 text-white"
+                        className="h-6 w-6 text-white"
                       >
                         <path
                           strokeLinecap="round"
@@ -96,7 +96,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
         {isAuth ? (
           <Button
             content="Logout"
-            className="p-3 bg-white text-black rounded-xl"
+            className="rounded-xl bg-white p-3 text-black"
             onClick={handleLogout}
           >
             Logout
@@ -105,7 +105,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
           !isAuth && (
             <div className="flex items-center">
               <Link href="/organizer/connect">
-                <div className="mr-10 flex items-center cursor-pointer hover:brightness-90 transition duration-300">
+                <div className="mr-10 flex cursor-pointer items-center transition duration-300 hover:brightness-90">
                   {address ? (
                     <p className="ml-2 font-semibold text-white ">{address}</p>
                   ) : (
@@ -120,10 +120,10 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
           )
         )}
       </div>
-      <div className="responsived fixed top-0 w-full flex items-center justify-between bg-[#19083D] py-1 px-4 lg:hidden z-50">
-        <div className="flex items-center justify-between w-full">
+      <div className="responsived fixed top-0 z-50 flex w-full items-center justify-between bg-[#19083D] py-1 px-4 lg:hidden">
+        <div className="flex w-full items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-white cursor-pointer">
+            <Link href="/" className="cursor-pointer text-white">
               <img src="/images/logo.png" alt="Logo" width={130} height={80} />
             </Link>
           </div>
@@ -134,7 +134,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 text-white"
+              className="h-6 w-6 text-white"
             >
               <path
                 strokeLinecap="round"
@@ -145,14 +145,14 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
           </button>
         </div>
         <div
-          className={`px-5 py-5 absolute top-20 bg-[#19083D] w-full left-0 ${
+          className={`absolute top-20 left-0 w-full bg-[#19083D] px-5 py-5 ${
             isVisible ? "" : "hidden"
           }`}
         >
-          <ul className="flex items-start flex-col mb-5">
+          <ul className="mb-5 flex flex-col items-start">
             {categories.map((category, index) => (
               <Link href={category.link} className="" key={index}>
-                <div className="mr-5 hover:bg-white hover:text-[#19083D] text-white w-full p-4 my-2 transition duration-300">
+                <div className="my-2 mr-5 w-full p-4 text-white transition duration-300 hover:bg-white hover:text-[#19083D]">
                   <li>{category.category}</li>
                 </div>
               </Link>
@@ -160,13 +160,13 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
             {isSearchBar && (
               <Input
                 type="text"
-                className="p-3 rounded-xl text-slate-700 w-full pr-[100px] focus:ring-4 focus:ring-slate-400 relative"
+                className="relative w-full rounded-xl p-3 pr-[100px] text-slate-700 focus:ring-4 focus:ring-slate-400"
                 placeholder="cari tiket yang anda inginkan"
                 endIcon={
                   <Button
                     type="submit"
                     content=""
-                    className="text-slate-500 w-[100%] bg-[#273568] rounded-lg p-2 px-3"
+                    className="w-[100%] rounded-lg bg-[#273568] p-2 px-3 text-slate-500"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6 text-white"
+                      className="h-6 w-6 text-white"
                     >
                       <path
                         strokeLinecap="round"
@@ -188,14 +188,14 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
             )}
           </ul>
           {isAuth ? (
-            <Button content="" className="text-primary rounded-lg font-bold font-montserrat">
+            <Button content="" className="rounded-lg font-montserrat font-bold text-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-10 h-10 text-white"
+                className="h-10 w-10 text-white"
               >
                 <path
                   strokeLinecap="round"
@@ -205,7 +205,7 @@ const Navbar = ({ isAuthenticated, isSearchBar = false }: Props) => {
               </svg>
             </Button>
           ) : (
-            <div className="flex items-center w-full justify-center">
+            <div className="flex w-full items-center justify-center">
               <Link href="/organizer/make-event">
                 <div className="mr-5 flex items-center lg:mb-3">
                   <img src="/images/buat_event.svg" width={30} />

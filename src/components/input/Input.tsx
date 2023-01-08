@@ -18,8 +18,8 @@ const Input = ({
   accept,
 }: Props) => {
   return (
-    <div className="w-full relative flex items-center">
-      {beginningIcon && <div className="p-3 absolute -left-[2px] mt-[5px]">{beginningIcon}</div>}
+    <div className="relative flex w-full items-center">
+      {beginningIcon && <div className="absolute -left-[2px] mt-[5px] p-3">{beginningIcon}</div>}
       <input
         accept={accept}
         type={type}
@@ -27,7 +27,7 @@ const Input = ({
         onChange={onChange}
         className={`${
           beginningIcon !== undefined ? "pl-10" : "pl-5"
-        } transition duration-300 outline-none focus:ring-3 ring-[#19083D] ${className} p-3`}
+        } focus:ring-3 outline-none ring-[#19083D] transition duration-300 ${className} p-3`}
         required={required}
         disabled={disabled}
         value={value}

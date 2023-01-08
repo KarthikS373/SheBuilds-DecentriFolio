@@ -7,18 +7,18 @@ import AppLayout from "../layout/AppLayout"
 const UnderConstruction = () => {
   return (
     <AppLayout>
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="mt-20 flex flex-col md:flex-row md:p-0 p-2 items-center">
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="mt-20 flex flex-col items-center p-2 md:flex-row md:p-0">
           <img src={constructionSVG.src} alt="Under construction" className="w-[50vw]" />
-          <div className="md:ml-5 mt-10 font-poppins md:block flex md:items-start items-center md:flex-row flex-col">
-            <p className="text-primary text-2xl font-bold mb-3">Page Under Construction</p>
-            <p className="text-primary text-center md:text-start">Aww snap :(((</p>
-            <p className="text-primary text-center md:text-start mt-2">
+          <div className="mt-10 flex flex-col items-center font-poppins md:ml-5 md:block md:flex-row md:items-start">
+            <p className="mb-3 text-2xl font-bold text-primary">Page Under Construction</p>
+            <p className="text-center text-primary md:text-start">Aww snap :(((</p>
+            <p className="mt-2 text-center text-primary md:text-start">
               The page you are looking for is currently under construction. <br />
               Hold back, we are working on making it live{" "}
             </p>
             <Link href="/">
-              <Button content="" className="bg-primary text-white p-3 rounded-lg mt-5 text-sm">
+              <Button content="" className="mt-5 rounded-lg bg-primary p-3 text-sm text-white">
                 Go to home
               </Button>
             </Link>

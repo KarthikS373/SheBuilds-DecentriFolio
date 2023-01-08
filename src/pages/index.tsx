@@ -71,9 +71,9 @@ const Dashboard = () => {
       <Head>
         <title>DecentriFolio | Home </title>
       </Head>
-      <div className="pt-20 px-10 bg-[#142850] text-white p-5 flex items-center flex-col-reverse lg:flex-row justify-between">
+      <div className="flex flex-col-reverse items-center justify-between bg-[#142850] p-5 px-10 pt-20 text-white lg:flex-row">
         <div className="md:w-1/2">
-          <h1 className="md:text-5xl text-4xl max-w-xl font-bold mb-5">
+          <h1 className="mb-5 max-w-xl text-4xl font-bold md:text-5xl">
             <DecoderText
               text={"The cheapest tickets on the Internet, Period."}
               start={true}
@@ -91,12 +91,12 @@ const Dashboard = () => {
           <form onSubmit={handleSearch}>
             <Input
               type="text"
-              className="p-3 rounded text-slate-700 w-full pr-[100px] focus:ring-2 focus:ring-slate-400"
+              className="w-full rounded p-3 pr-[100px] text-slate-700 focus:ring-2 focus:ring-slate-400"
               placeholder="Search for Events"
               endIcon={
                 <Button
                   content=""
-                  className="text-slate-500 w-[100%] bg-[#273568] rounded-lg p-2 px-3"
+                  className="w-[100%] rounded-lg bg-[#273568] p-2 px-3 text-slate-500"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const Dashboard = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6 text-white"
+                    className="h-6 w-6 text-white"
                   >
                     <path
                       strokeLinecap="round"
@@ -123,12 +123,12 @@ const Dashboard = () => {
       </div>
       <div className="px-10">
         <div>
-          <h4 className="font-bold text-xl my-10">Categories</h4>
-          <div className="flex flex-col lg:flex-row py-2 flex-wrap">
+          <h4 className="my-10 text-xl font-bold">Categories</h4>
+          <div className="flex flex-col flex-wrap py-2 lg:flex-row">
             {categories.map((category, index) => (
               <Link
                 href={category.link}
-                className={`cursor-pointer rounded-lg relative bg-cover transition hover:brightness-75 lg:w-fit lg:m-2 lg:mx-10 lg:my-3 my-2 min-w-[200px] min-h-[100px] w-full`}
+                className={`relative my-2 min-h-[100px] w-full min-w-[200px] cursor-pointer rounded-lg bg-cover transition hover:brightness-75 lg:m-2 lg:mx-10 lg:my-3 lg:w-fit`}
                 style={{
                   backgroundImage:
                     "url('https://media.istockphoto.com/id/1324006497/photo/music-controller-dj-mixer-in-a-nightclub-at-a-party.jpg?b=1&s=170667a&w=0&k=20&c=8UWTZesYCiRUZVC-QSv-6Q4VFh78mSIQQmkQY3aa_tM=')",
@@ -141,11 +141,11 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="my-10">
-          <h4 className="ml-2 font-bold text-xl my-5">Trending Events</h4>
+          <h4 className="my-5 ml-2 text-xl font-bold">Trending Events</h4>
           <div className="md:ml-10">
             <div>
-              <h5 className="ml-1 font-bold text-lg my-5">Parties</h5>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:flex-row">
+              <h5 className="my-5 ml-1 text-lg font-bold">Parties</h5>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:flex-row">
                 {data && Object.keys(data).length !== 0 ? (
                   data.map(
                     (
@@ -178,10 +178,10 @@ const Dashboard = () => {
               </div>
             </div>
             <div>
-              <h5 className="font-bold text-lg my-5">Hackathons</h5>
-              <h5 className="font-bold text-lg my-5">Webinars & Workshops</h5>
-              <h5 className="font-bold text-lg my-5">Cultural</h5>
-              <h5 className="font-bold text-lg my-5">College Events</h5>
+              <h5 className="my-5 text-lg font-bold">Hackathons</h5>
+              <h5 className="my-5 text-lg font-bold">Webinars & Workshops</h5>
+              <h5 className="my-5 text-lg font-bold">Cultural</h5>
+              <h5 className="my-5 text-lg font-bold">College Events</h5>
             </div>
           </div>
         </div>

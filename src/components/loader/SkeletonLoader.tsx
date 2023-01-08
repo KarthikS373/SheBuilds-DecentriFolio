@@ -3,7 +3,7 @@ import ContentLoader, { Instagram as Default } from "react-content-loader"
 
 const SkeletonLoader = () => {
   return (
-    <div className="p-10 rounded-xl bg-white h-fit">
+    <div className="h-fit rounded-xl bg-white p-10">
       <ContentLoader>
         <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
         <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />

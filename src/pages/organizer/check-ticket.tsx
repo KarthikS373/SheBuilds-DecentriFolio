@@ -25,15 +25,15 @@ const CheckTicket = () => {
       <Head>
         <title>DecentriFolio - Check Ticket</title>
       </Head>
-      <div className="min-h-screen rounded-2xl top-0 right-0 pt-32 w-full p-5">
-        <div className="flex items-center flex-col">
-          <h2 className="text-center text-primary text-2xl underline font-bold mb-5">
+      <div className="top-0 right-0 min-h-screen w-full rounded-2xl p-5 pt-32">
+        <div className="flex flex-col items-center">
+          <h2 className="mb-5 text-center text-2xl font-bold text-primary underline">
             Ticket Details
           </h2>
           <Button
             content=""
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="absolute left-10 lg:hidden bg-primary p-3 rounded-xl text-white"
+            className="absolute left-10 rounded-xl bg-primary p-3 text-white lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,22 +41,22 @@ const CheckTicket = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </Button>
-          <form onSubmit={handleSubmit} className="flex items-center justify-center flex-col">
+          <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
             <Input
               type="text"
-              className="w bg-white rounded-2xl border border-slate-500 md:w-[600px] w-full md:min-w-0 min-w-[280px]"
+              className="w w-full min-w-[280px] rounded-2xl border border-slate-500 bg-white md:w-[600px] md:min-w-0"
               placeholder="Enter Ticket token number"
               required
               onChange={(e) => setToken(e.target.value)}
             />
             <Button
               content=""
-              className="font-semibold bg-primary text-white rounded-3xl px-20 py-3 mt-5"
+              className="mt-5 rounded-3xl bg-primary px-20 py-3 font-semibold text-white"
             >
               Check ticket details
             </Button>
