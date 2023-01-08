@@ -24,17 +24,28 @@ With DecentriFolio, event hosts can easily create and promote their events, and 
 
 ## Technologies
 
-- Next JS : 
+- Next JS :
 
   Next.js is a popular JavaScript framework that is used to build server-rendered React applications and allows to create web applications that are optimized for performance and scalability, and includes a number of built-in features such as automatic code splitting and optimized client-side rendering. Next.js is used to build the user interface and handle the rendering of pages on the server that allows a fast and seamless experience for users, as the server can handle the heavy lifting of rendering pages and serving content.
 
-- Tailwind CSS : 
+- Tailwind CSS :
 
   Tailwind CSS is a utility-first CSS framework that is designed to make it easy to build user interfaces with consistent and customizable styles and allows for rapid development of visually pleasing user interfaces. Tailwind CSS is used to style the user interface and create a visually pleasing, consistent look and feel across the site and also to customize the branding and design of the platform.
 
+- TypeScript :
+
+- Solidity :
+
+- Hardhat :
+
 ## Authors
+
 - Karthik S
-- Apoorva Kothari 
+- Apoorva Kothari
+
+## Media
+
+<img src="./media/DecentriFolio.png" />
 
 ## Links
 
